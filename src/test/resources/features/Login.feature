@@ -37,7 +37,7 @@ Feature: Login functionality
       | username | password    |
       | studen   | Password123 |
 
-  Scenario Outline: Successful login with invalid usernam
+  Scenario Outline: Successful login with invalid username
 
     When I enter valid "<username>" and "<password>"
     And I click the login button
