@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="0" failed="3" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-09-23T22:26:20 IST" name="Default Suite" finished-at="2025-09-23T22:26:21 IST" duration-ms="316">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNGTestRunner@6ab778a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2025-09-23T22:26:20 IST" name="TestFrameworkWithDesignPatteren" finished-at="2025-09-23T22:26:21 IST" duration-ms="316">
+      <class name="runner.TestNGTestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runner.TestNGTestRunner@6ab778a]" started-at="2025-09-23T22:26:20 IST" name="setUpClass" finished-at="2025-09-23T22:26:21 IST" duration-ms="172" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@765f05af]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNGTestRunner@6ab778a]" started-at="2025-09-23T22:26:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-23T22:26:21 IST" duration-ms="118" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Successful login with invalid password credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at pages.LoginPage.verifyOnloginPage(LoginPage.java:31)
+at Steps.LoginSteps.i_am_on_the_login_page(LoginSteps.java:30)
+at ✽.I am on the login page(file:///Users/sidhalingesh/Documents/TestPracticeBDDFramework/TestFrameworkWithDesignPatteren/src/test/resources/features/Login.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNGTestRunner@6ab778a]" started-at="2025-09-23T22:26:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-23T22:26:21 IST" duration-ms="118" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Successful login with valid credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at pages.LoginPage.verifyOnloginPage(LoginPage.java:31)
+at Steps.LoginSteps.i_am_on_the_login_page(LoginSteps.java:30)
+at ✽.I am on the login page(file:///Users/sidhalingesh/Documents/TestPracticeBDDFramework/TestFrameworkWithDesignPatteren/src/test/resources/features/Login.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runner.TestNGTestRunner@6ab778a]" started-at="2025-09-23T22:26:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-09-23T22:26:21 IST" duration-ms="118" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Successful login with invalid username credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Login functionality"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.findElement(org.openqa.selenium.By)" because "this.driver" is null
+at pages.LoginPage.verifyOnloginPage(LoginPage.java:31)
+at Steps.LoginSteps.i_am_on_the_login_page(LoginSteps.java:30)
+at ✽.I am on the login page(file:///Users/sidhalingesh/Documents/TestPracticeBDDFramework/TestFrameworkWithDesignPatteren/src/test/resources/features/Login.feature:5)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runner.TestNGTestRunner@6ab778a]" started-at="2025-09-23T22:26:21 IST" name="tearDownClass" finished-at="2025-09-23T22:26:21 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runner.TestNGTestRunner -->
+    </test> <!-- TestFrameworkWithDesignPatteren -->
+  </suite> <!-- Default Suite -->
+</testng-results>
