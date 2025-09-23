@@ -1,51 +1,51 @@
+name: Selenium BDD CI/CD
+
 on:
   push:
     branches:
-    - main
-    - release/*
-    
-on:
+      - main
+      - release/*
   pull_request:
     branches:
-    - main
-on:
+      - main
   schedule:
-  - cron: "0 2 * * 1-5"
-on:
-  workflow_dispatch:  
-
-jobs:
-  my_job:
-    name: deploy to staging
-    runs-on: ubuntu-22.04
-
-    - name: Setup Node
-      uses: actions/setup-node@v4
-      with:s
-      node-version: '20.0'
-
-    - name: Install Dependencies
-      run: npm install
+    - cron: "0 2 * * 1-5"   # Runs at 2 AM Mon-Fri
+  workflow_dispatch:         # Manual trigger
 
 jobs:
   test:
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    name: Run Cucumber Tests on ${{ matrix.os }} with JDK ${{ matrix.java }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: ['18.0', '20.0']
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        java: [11, 17]
+        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node_version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node_version }}
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: npm install, build and test
-      run: |
-        npm install
-        npm run build --if-present
-        npm test
-  
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: ${{ matrix.java }}
+          distribution: temurin
+
+      - name: Cache Maven Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: ${{ runner.os }}-maven
+
+      - name: Run Cucumber Tests
+        run: mvn clean test -Dcucumber.filter.tags="@Login"
+
+      - name: Upload Cucumber Reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: cucumber-reports-${{ matrix.os }}-jdk${{ matrix.java }}
+          path: |
+            target/cucumber-reports/*.html
+            target/cucumber-reports/*.json
+            target/surefire-reports/*.xml
